@@ -13,7 +13,6 @@ const Body = () => {
     const checkAuth = async () => {
         try {
             const user = await axios.get(BASE_URL + '/profile', { withCredentials: true });
-            console.log('user', user?.data);
 
             if (!user) {
                 return naviagte('/login');
@@ -38,10 +37,10 @@ const Body = () => {
     }, [])
 
     return (
-        <div className=''>
+        <>
             <Navabr />
             <Outlet />
-        </div>
+        </>
     )
 }
 
